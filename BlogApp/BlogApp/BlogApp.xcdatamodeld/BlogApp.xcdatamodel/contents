@@ -21,6 +21,7 @@
     <entity name="OfflineBlogData" representedClassName="OfflineBlogData" syncable="YES">
         <attribute name="jsonData" optional="YES" attributeType="String"/>
         <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="page" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
         <attribute name="about" optional="YES" attributeType="String"/>
@@ -37,7 +38,7 @@
     <elements>
         <element name="BlogInfo" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="MediaInfo" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="OfflineBlogData" positionX="-27" positionY="108" width="128" height="88"/>
         <element name="UserInfo" positionX="-36" positionY="9" width="128" height="193"/>
-        <element name="OfflineBlogData" positionX="-27" positionY="108" width="128" height="73"/>
     </elements>
 </model>

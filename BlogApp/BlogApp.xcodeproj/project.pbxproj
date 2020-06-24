@@ -32,8 +32,8 @@
 		8D509C2424A21A2A0047F88A /* UserInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C1E24A21A2A0047F88A /* UserInfo+CoreDataClass.swift */; };
 		8D509C2524A21A2A0047F88A /* UserInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C1F24A21A2A0047F88A /* UserInfo+CoreDataProperties.swift */; };
 		8D509C2824A21E230047F88A /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C2724A21E230047F88A /* DatabaseHandler.swift */; };
-		8D509C2B24A23ED20047F88A /* OfflineBlogData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C2924A23ED20047F88A /* OfflineBlogData+CoreDataClass.swift */; };
-		8D509C2C24A23ED20047F88A /* OfflineBlogData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C2A24A23ED20047F88A /* OfflineBlogData+CoreDataProperties.swift */; };
+		8D509C6424A343730047F88A /* OfflineBlogData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C6224A343730047F88A /* OfflineBlogData+CoreDataClass.swift */; };
+		8D509C6524A343730047F88A /* OfflineBlogData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D509C6324A343730047F88A /* OfflineBlogData+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +64,8 @@
 		8D509C1E24A21A2A0047F88A /* UserInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8D509C1F24A21A2A0047F88A /* UserInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8D509C2724A21E230047F88A /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
-		8D509C2924A23ED20047F88A /* OfflineBlogData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfflineBlogData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		8D509C2A24A23ED20047F88A /* OfflineBlogData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfflineBlogData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8D509C6224A343730047F88A /* OfflineBlogData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfflineBlogData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8D509C6324A343730047F88A /* OfflineBlogData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OfflineBlogData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +146,8 @@
 		8D509BEA24A217470047F88A /* ManageObject */ = {
 			isa = PBXGroup;
 			children = (
-				8D509C2924A23ED20047F88A /* OfflineBlogData+CoreDataClass.swift */,
-				8D509C2A24A23ED20047F88A /* OfflineBlogData+CoreDataProperties.swift */,
+				8D509C6224A343730047F88A /* OfflineBlogData+CoreDataClass.swift */,
+				8D509C6324A343730047F88A /* OfflineBlogData+CoreDataProperties.swift */,
 				8D509C1A24A21A2A0047F88A /* BlogInfo+CoreDataClass.swift */,
 				8D509C1B24A21A2A0047F88A /* BlogInfo+CoreDataProperties.swift */,
 				8D509C1C24A21A2A0047F88A /* MediaInfo+CoreDataClass.swift */,
@@ -268,7 +268,7 @@
 				8D509C0924A217470047F88A /* AppConstraints.swift in Sources */,
 				8D509C0A24A217470047F88A /* MediaInfoModel.swift in Sources */,
 				8D509BFE24A217470047F88A /* BlogViewControllerViewModel.swift in Sources */,
-				8D509C2B24A23ED20047F88A /* OfflineBlogData+CoreDataClass.swift in Sources */,
+				8D509C6424A343730047F88A /* OfflineBlogData+CoreDataClass.swift in Sources */,
 				8D509C0724A217470047F88A /* ImageDownloader.swift in Sources */,
 				8D509BC624A1FCD20047F88A /* BlogApp.xcdatamodeld in Sources */,
 				8D509BFD24A217470047F88A /* BlogViewController.swift in Sources */,
@@ -280,7 +280,7 @@
 				8D509C0C24A217470047F88A /* WebServiceWrapper.swift in Sources */,
 				8D509C2224A21A2A0047F88A /* MediaInfo+CoreDataClass.swift in Sources */,
 				8D509BBC24A1FCD20047F88A /* AppDelegate.swift in Sources */,
-				8D509C2C24A23ED20047F88A /* OfflineBlogData+CoreDataProperties.swift in Sources */,
+				8D509C6524A343730047F88A /* OfflineBlogData+CoreDataProperties.swift in Sources */,
 				8D509C2024A21A2A0047F88A /* BlogInfo+CoreDataClass.swift in Sources */,
 				8D509C2824A21E230047F88A /* DatabaseHandler.swift in Sources */,
 				8D509C0624A217470047F88A /* BlogInfoModel.swift in Sources */,

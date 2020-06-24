@@ -16,6 +16,7 @@ public enum WebServiceResponse {
 
 class WebServiceWrapper: NSObject {
     static let shared = WebServiceWrapper()
+   
     lazy var  urlSession = URLSession(configuration: .default, delegate: WebServiceWrapper.shared, delegateQueue: .current)
     
     /// Default get method for web service call

@@ -34,6 +34,9 @@ class BlogViewControllerViewModel: NSObject {
  func loadMoreData() {
     if !isMaxReach {
      currentIndex = currentIndex + 1
+    if <#condition#> {
+            <#code#>
+    }
      WebAPI.getBlogInfo(currentIndex, limit: 10) {[unowned self] blogRespose in
         switch blogRespose {
         case .blogData(let blogData):

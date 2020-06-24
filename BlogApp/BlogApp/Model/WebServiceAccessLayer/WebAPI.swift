@@ -32,7 +32,7 @@ class WebAPI: NSObject {
         WebServiceWrapper.callHTTPGetService(BlogInfoAPI.blogInfo.rawValue, param: ["page" : page, "limit" : limit]) { response in
             switch response {
                 case .success(data: let data):
-                    completionHandler(.blogData(parseBlogData(data:data)))
+                    completionHandler(.blogData(parseBlogData(data:data, page: page)))
                 case .failedWithError(error: let error):
                     completionHandler(.failedWithError(error: error))
                 case .failedWithMessage(message: let message):
@@ -45,8 +45,9 @@ class WebAPI: NSObject {
     ///
     /// - Parameter data: Raw data which received from cloud
     /// - Returns: return BlogInformation
-    class func parseBlogData(data:Data) -> [BlogInfoModel] {
+    class func parseBlogData(data:Data, page:Int) -> [BlogInfoModel] {
         if let validJsonString = String(data: data, encoding: .isoLatin1), let convertData = (validJsonString.data(using: .utf8)) {
+            DatabaseHandler().saveDataToDataBase(jsonToSave: validJsonString, page: page)
             return parseBlogJsonString(jsonData:convertData)
         }
         return []
