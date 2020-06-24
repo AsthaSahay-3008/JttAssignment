@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 protocol BlogViewControllerViewModelDelegate : NSObjectProtocol {
    func showAlaert(_ message: String?)
    func reloadBlogData()
@@ -34,33 +35,31 @@ class BlogViewControllerViewModel: NSObject {
  func loadMoreData() {
     if !isMaxReach {
      currentIndex = currentIndex + 1
-    if !Reachability.isConnectedToNetwork() {
-        let blogData = DatabaseHandler().getData(for: currentIndex)
-        if blogData.count>0 {
-            self.blogList.append(contentsOf: blogData)
-            self.callBack?.reloadBlogData()
-        }else {
-            self.isMaxReach = true
+        ConnectionManager.isReachable { [unowned self] (manager) in
+            WebAPI.getBlogInfo(self.currentIndex, limit: 10) {[unowned self] blogRespose in
+               switch blogRespose {
+               case .blogData(let blogData):
+                   if blogData.count > 0 {
+                       self.blogList.append(contentsOf: blogData)
+                       self.callBack?.reloadBlogData()
+                   } else {
+                       self.isMaxReach = true
+                   }
+               case .failedWithError(error: let error):
+                   self.callBack?.showAlaert(error.localizedDescription)
+               case .failedWithMessage(message: let errorMessage):
+                   self.callBack?.showAlaert(errorMessage)
+               }
+            }
+        }
+        ConnectionManager.isUnreachable {[unowned self] (manager) in
+            let blogData = DatabaseHandler().getData(for: self.currentIndex)
+            if blogData.count>0 {
+                self.blogList.append(contentsOf: blogData)
+                self.callBack?.reloadBlogData()
+            }
         }
         
-    }else  {
-        WebAPI.getBlogInfo(currentIndex, limit: 10) {[unowned self] blogRespose in
-           switch blogRespose {
-           case .blogData(let blogData):
-               if blogData.count > 0 {
-                   self.blogList.append(contentsOf: blogData)
-                   self.callBack?.reloadBlogData()
-               } else {
-                   self.isMaxReach = true
-               }
-           case .failedWithError(error: let error):
-               self.callBack?.showAlaert(error.localizedDescription)
-           case .failedWithMessage(message: let errorMessage):
-               self.callBack?.showAlaert(errorMessage)
-           }
-        }
-
-        }
     }
  }
  
@@ -74,8 +73,5 @@ class BlogViewControllerViewModel: NSObject {
  func blogForCell(index:IndexPath) -> BlogInfoModel {
     return blogList[index.row]
  }
-    func fethDataFromDatabase()  {
-      
-    }
  
  }
