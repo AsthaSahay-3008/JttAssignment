@@ -34,24 +34,33 @@ class BlogViewControllerViewModel: NSObject {
  func loadMoreData() {
     if !isMaxReach {
      currentIndex = currentIndex + 1
-    if <#condition#> {
-            <#code#>
-    }
-     WebAPI.getBlogInfo(currentIndex, limit: 10) {[unowned self] blogRespose in
-        switch blogRespose {
-        case .blogData(let blogData):
-            if blogData.count > 0 {
-                self.blogList.append(contentsOf: blogData)
-                self.callBack?.reloadBlogData()
-            } else {
-                self.isMaxReach = true
-            }
-        case .failedWithError(error: let error):
-            self.callBack?.showAlaert(error.localizedDescription)
-        case .failedWithMessage(message: let errorMessage):
-            self.callBack?.showAlaert(errorMessage)
+    if !Reachability.isConnectedToNetwork() {
+        let blogData = DatabaseHandler().getData(for: currentIndex)
+        if blogData.count>0 {
+            self.blogList.append(contentsOf: blogData)
+            self.callBack?.reloadBlogData()
+        }else {
+            self.isMaxReach = true
         }
-     }
+        
+    }else  {
+        WebAPI.getBlogInfo(currentIndex, limit: 10) {[unowned self] blogRespose in
+           switch blogRespose {
+           case .blogData(let blogData):
+               if blogData.count > 0 {
+                   self.blogList.append(contentsOf: blogData)
+                   self.callBack?.reloadBlogData()
+               } else {
+                   self.isMaxReach = true
+               }
+           case .failedWithError(error: let error):
+               self.callBack?.showAlaert(error.localizedDescription)
+           case .failedWithMessage(message: let errorMessage):
+               self.callBack?.showAlaert(errorMessage)
+           }
+        }
+
+        }
     }
  }
  

@@ -18,7 +18,6 @@ extension OfflineBlogData {
     }
 
     @NSManaged public var jsonData: String?
-    @NSManaged public var lastUpdated: Date?
     @NSManaged public var page: Int64
 
 }

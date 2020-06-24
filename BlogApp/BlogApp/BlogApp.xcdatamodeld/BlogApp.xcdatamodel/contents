@@ -1,44 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="BlogInfo" representedClassName="BlogInfo" syncable="YES">
-        <attribute name="blogid" optional="YES" attributeType="String"/>
-        <attribute name="comments" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="content" optional="YES" attributeType="String"/>
-        <attribute name="createdAt" optional="YES" attributeType="String"/>
-        <attribute name="likes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserInfo" inverseName="newRelationship" inverseEntity="UserInfo"/>
-        <relationship name="newRelationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MediaInfo" inverseName="newRelationship" inverseEntity="MediaInfo"/>
-    </entity>
-    <entity name="MediaInfo" representedClassName="MediaInfo" syncable="YES">
-        <attribute name="blogId" optional="YES" attributeType="String"/>
-        <attribute name="createdAt" optional="YES" attributeType="String"/>
-        <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="mediaId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="String"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BlogInfo" inverseName="newRelationship1" inverseEntity="BlogInfo"/>
-    </entity>
     <entity name="OfflineBlogData" representedClassName="OfflineBlogData" syncable="YES">
         <attribute name="jsonData" optional="YES" attributeType="String"/>
-        <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="page" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="UserInfo" representedClassName="UserInfo" syncable="YES">
-        <attribute name="about" optional="YES" attributeType="String"/>
-        <attribute name="avatar" optional="YES" attributeType="String"/>
-        <attribute name="blogId" optional="YES" attributeType="String"/>
-        <attribute name="city" optional="YES" attributeType="String"/>
-        <attribute name="createdAt" optional="YES" attributeType="String"/>
-        <attribute name="designation" optional="YES" attributeType="String"/>
-        <attribute name="lastname" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="userId" optional="YES" attributeType="String"/>
-        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BlogInfo" inverseName="newRelationship" inverseEntity="BlogInfo"/>
-    </entity>
     <elements>
-        <element name="BlogInfo" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="MediaInfo" positionX="-54" positionY="-9" width="128" height="148"/>
-        <element name="OfflineBlogData" positionX="-27" positionY="108" width="128" height="88"/>
-        <element name="UserInfo" positionX="-36" positionY="9" width="128" height="193"/>
+        <element name="OfflineBlogData" positionX="-27" positionY="108" width="128" height="73"/>
     </elements>
 </model>
